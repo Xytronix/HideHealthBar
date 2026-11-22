@@ -1,0 +1,21 @@
+{
+  "Group": "xytronix",
+  "Name": "Hide HealthBar",
+  "Version": "1.1.2",
+  "Description": "Hides entity health bars and combat text for players and NPCs.",
+  "Authors": [
+    {
+      "Name": "xytronix"
+    }
+  ],
+  "ServerVersion": ">=0.7.7 <0.8.0",
+  "Dependencies": {
+    "Hytale:EntityUIModule": "*",
+    "Hytale:EntityModule": "*",
+    "Hytale:NPC": "*"
+  },
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "Main": "xytronix.HideHealthBar"
+}
