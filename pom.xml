@@ -4,17 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>xytronix</groupId>
     <artifactId>HideHealthBar</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.2-beta.1</version>
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hytale.server.version>0.7.7</hytale.server.version>
+        <hytale.server.version>0.8.0-pre.6</hytale.server.version>
         <project.build.outputTimestamp>2026-09-19T00:00:00Z</project.build.outputTimestamp>
     </properties>
     <repositories>
         <repository>
-            <id>hytale-release</id>
-            <url>https://maven.hytale.com/release</url>
+            <id>hytale-pre-release</id>
+            <url>https://maven.hytale.com/pre-release</url>
         </repository>
     </repositories>
     <dependencies>

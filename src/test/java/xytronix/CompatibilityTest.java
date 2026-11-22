@@ -14,7 +14,7 @@ import xytronix.config.HideHealthBarConfig;
 
 class CompatibilityTest {
     @Test
-    void manifestMatchesBuildAndAccepts07ReleasesFrom077() throws Exception {
+    void manifestMatchesBuildAndAcceptsPreReleasesFrom080Pre6() throws Exception {
         try (var stream = getClass().getResourceAsStream("/manifest.json")) {
             assertNotNull(stream);
             var manifest = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
@@ -26,11 +26,10 @@ class CompatibilityTest {
             assertEquals("Hide HealthBar", manifest.get("Name").getAsString());
             assertEquals(HideHealthBar.class.getName(), manifest.get("Main").getAsString());
             var range = SemverRange.fromString(manifest.get("ServerVersion").getAsString());
-            assertTrue(range.satisfies(Semver.fromString("0.7.7")));
-            assertTrue(range.satisfies(Semver.fromString("0.7.8")));
-            assertFalse(range.satisfies(Semver.fromString("0.7.6")));
-            assertFalse(range.satisfies(Semver.fromString("0.8.0-pre.6")));
-            assertFalse(range.satisfies(Semver.fromString("0.8.0")));
+            assertTrue(range.satisfies(Semver.fromString("0.8.0-pre.6")));
+            assertTrue(range.satisfies(Semver.fromString("0.8.0")));
+            assertFalse(range.satisfies(Semver.fromString("0.8.0-pre.5")));
+            assertFalse(range.satisfies(Semver.fromString("0.7.7")));
         }
     }
 

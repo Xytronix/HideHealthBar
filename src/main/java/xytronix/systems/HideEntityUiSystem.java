@@ -13,7 +13,7 @@ import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntitySta
 import com.hypixel.hytale.server.core.modules.entityui.UIComponentList;
 import com.hypixel.hytale.server.core.modules.entityui.asset.EntityUIComponent;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.npc.entities.NPCEntity;
+import com.hypixel.hytale.server.npc.components.NPCComponent;
 import java.util.Arrays;
 import java.util.Objects;
 import javax.annotation.Nonnull;
@@ -30,7 +30,7 @@ public class HideEntityUiSystem extends RefSystem<EntityStore> {
     private final ComponentType<EntityStore, Player> playerComponentType;
 
     @Nonnull
-    private final ComponentType<EntityStore, NPCEntity> npcComponentType;
+    private final ComponentType<EntityStore, NPCComponent> npcComponentType;
 
     @Nonnull
     private final HideHealthBarConfig config;
@@ -39,7 +39,7 @@ public class HideEntityUiSystem extends RefSystem<EntityStore> {
         this.config = config;
         this.uiComponentListType = UIComponentList.getComponentType();
         this.playerComponentType = Player.getComponentType();
-        this.npcComponentType = NPCEntity.getComponentType();
+        this.npcComponentType = NPCComponent.getComponentType();
         this.query = Query.and(this.uiComponentListType, Query.or(this.playerComponentType, this.npcComponentType));
     }
 
